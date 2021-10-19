@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.033d480a.chunk.css",
+    "main.js": "/static/js/main.050aa51c.chunk.js",
+    "main.js.map": "/static/js/main.050aa51c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.10338255.js",
+    "runtime-main.js.map": "/static/js/runtime-main.10338255.js.map",
+    "static/js/2.ee5e7f1c.chunk.js": "/static/js/2.ee5e7f1c.chunk.js",
+    "static/js/2.ee5e7f1c.chunk.js.map": "/static/js/2.ee5e7f1c.chunk.js.map",
+    "static/js/3.0379e49d.chunk.js": "/static/js/3.0379e49d.chunk.js",
+    "static/js/3.0379e49d.chunk.js.map": "/static/js/3.0379e49d.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.033d480a.chunk.css.map": "/static/css/main.033d480a.chunk.css.map",
+    "static/js/2.ee5e7f1c.chunk.js.LICENSE.txt": "/static/js/2.ee5e7f1c.chunk.js.LICENSE.txt",
+    "static/media/pick-procedure.styles.scss": "/static/media/allison-christine-n4MHxHD1dKI-unsplash-edited.15816ce1.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.10338255.js",
+    "static/js/2.ee5e7f1c.chunk.js",
+    "static/css/main.033d480a.chunk.css",
+    "static/js/main.050aa51c.chunk.js"
+  ]
+}

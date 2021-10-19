@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Schedule - Edit</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/journal/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="/css/admin.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="/">Nail Studio</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarColor01"
+        aria-controls="navbarColor01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">Dashboard</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/admin/schedule"
+              >Schedule <span class="sr-only">(current)</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <h1>Edit record</h1>
+
+      <form
+        th:action="'/admin/schedule/' + ${scheduledSession.id} + '/edit'"
+        method="POST"
+      >
+        <div class="form-group">
+          <label for="name">Client name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            th:value="${scheduledSession.name}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="number">Phone #</label>
+          <input
+            type="text"
+            class="form-control"
+            name="number"
+            th:value="${scheduledSession.phone}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="name">Date</label>
+          <input
+            type="text"
+            class="form-control"
+            name="date"
+            th:value="${scheduledSession.date}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="name">Time</label>
+          <input th:value="${scheduledSession.time}" />
+          <select name="time">
+            <option value="7">7:00</option>
+            <option value="8">8:00</option>
+            <option value="9">9:00</option>
+            <option value="10">10:00</option>
+            <option value="11">11:00</option>
+            <option value="12">12:00</option>
+            <option value="13">13:00</option>
+            <option value="14">14:00</option>
+            <option value="15">15:00</option>
+            <option value="16">16:00</option>
+            <option value="17">17:00</option>
+            <option value="18">18:00</option>
+            <option value="19">19:00</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="name">Service</label>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            name="service"
+          >
+            <option>Please select</option>
+            <option
+              th:selected="${scheduledSession.getService_id() == 1}"
+              value="1"
+            >
+              Basic Polish
+            </option>
+            <option
+              th:selected="${scheduledSession.getService_id() == 2}"
+              value="2"
+            >
+              Shellac
+            </option>
+            <option
+              th:selected="${scheduledSession.getService_id() == 3}"
+              value="3"
+            >
+              Acrylic
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <button class="btn">Submit</button>
+        </div>
+      </form>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.esm.min.js"></script>
+  </body>
+</html>

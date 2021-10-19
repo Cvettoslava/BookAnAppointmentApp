@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Broadway Script";
+  src: url("./Broadway-Script.otf");
+}
+
+.navbar-brand {
+  font-family: "Broadway Script", sans-serif;
+  text-transform: unset !important;
+}

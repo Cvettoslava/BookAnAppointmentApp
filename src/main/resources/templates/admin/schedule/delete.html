@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Schedule - Delete</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/journal/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="/css/admin.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="/">Nail Studio</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarColor01"
+        aria-controls="navbarColor01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">Dashboard</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/admin/schedule"
+              >Schedule <span class="sr-only">(current)</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <form th:action="'/admin/schedule/' + ${id} + '/delete'" method="POST">
+        <h1>Delete record</h1>
+        <p>Are you sure you want to delete <span th:text="${id}"></span></p>
+        <div class="form-group">
+          <button class="btn btn-danger">Yes</button>
+          <a class="btn btn-link text-primary" href="/admin/schedule">No</a>
+        </div>
+      </form>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.esm.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Schedule - Index</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/journal/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="/css/admin.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="/">Nail Studio</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarColor01"
+        aria-controls="navbarColor01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">Dashboard</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/admin/schedule"
+              >Schedule <span class="sr-only">(current)</span></a
+            >
+          </li>
+        </ul>
+        <form
+          class="form-inline my-2 my-lg-0"
+          method="GET"
+          action="/admin/schedule/search"
+        >
+          <input
+            class="form-control mr-sm-2"
+            type="text"
+            placeholder="Search"
+            name="q"
+          />
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+    <div class="container">
+      <h1>
+        All records -
+        <a href="/admin/schedule/create" class="btn btn-link text-primary"
+          >Add new</a
+        >
+      </h1>
+
+      <table class="table">
+        <thead>
+          <th>id</th>
+          <th>Name</th>
+          <th>Phone #</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Service</th>
+          <th>Actions</th>
+        </thead>
+        <tbody>
+          <tr th:each="scheduledSession: ${schedule}">
+            <td th:text="${scheduledSession.id}"></td>
+            <td th:text="${scheduledSession.name}"></td>
+            <td th:text="${scheduledSession.phone}"></td>
+            <td th:text="${scheduledSession.date}"></td>
+            <td th:text="${scheduledSession.time} + ':00'"></td>
+            <td th:text="${scheduledSession.service_id}"></td>
+            <td>
+              <a
+                th:href="'/admin/schedule/' + ${scheduledSession.id} + '/edit'"
+                class="btn btn-link"
+                >Edit</a
+              >
+              <a
+                th:href="'/admin/schedule/'+ ${scheduledSession.id} + '/delete'"
+                class="btn btn-link"
+                >Delete</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.esm.min.js"></script>
+  </body>
+</html>
